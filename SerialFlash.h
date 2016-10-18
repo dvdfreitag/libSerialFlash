@@ -50,17 +50,17 @@ void SerialFlash_DeepPower(void);
 void SerialFlash_ReleaseDeepPower(void);
 
 uint8_t SerialFlash_ReadPID(void);
-uint8_t SerialFlash_ReadJEDEC(void);
-uint16_t SerialFlash_ReadDevice(void);
-void SerialFlash_ReadUID(uint8_t *buffer);
+uint32_t SerialFlash_ReadJEDEC(void);
+uint16_t SerialFlash_ReadDevice(uint32_t addr);
+void SerialFlash_ReadUID(uint8_t *buffer, uint32_t addr);
 
 uint8_t SerialFlash_ReadSFDPByte(uint32_t addr);
-void SerialFlash_ReadSFDPBytes(uint32_t addr, uint8_t *buffer, uint8_t length);
+void SerialFlash_ReadSFDPBytes(uint32_t addr, uint8_t *buffer, uint32_t length);
 
 void SerialFlash_Reset(void);
 
 void SerialFlash_WriteInformation(uint32_t addr, uint8_t *buffer, uint8_t length);
-void SerialFlash_ReadInformation(uint32_t addr, uint8_t *buffer, uint8_t length);
+void SerialFlash_ReadInformation(uint32_t addr, uint8_t *buffer, uint32_t length);
 
 void SerialFlash_Unlock(uint8_t sector);
 void SerialFlash_Lock(void);
